@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistrationActivity">
+
+    <!--edit text for user name-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idTILUserName"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idEdtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--edit text for user password-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idTILPassword"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTILUserName"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:fontFamily="@font/poppins"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idEdtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:background="@color/blue"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--edit text for confirmation of user password-->
+
+    <!--button for creating user account.-->
+
+    <!--text view for displaying a text on
+        clicking we will open a login page-->
+
+
+    <!--progress bar as a loading indicator-->
+
+    <Button
+        android:id="@+id/idBtnRegister"
+        android:layout_width="365dp"
+        android:layout_height="62dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="86dp"
+        android:backgroundTint="@color/yellow"
+        android:fontFamily="@font/poppinsbold"
+        android:letterSpacing="0.10"
+        android:text="SIGNUP"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/idPBLoading"
+        android:layout_width="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_back"
+        android:visibility="gone" />
+
+
+
+    <TextView
+        android:id="@+id/t1"
+        android:layout_width="232dp"
+        android:layout_height="117dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-461dp"
+        android:layout_marginEnd="71dp"
+        android:layout_marginBottom="579dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Create New Account"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/t2"
+        android:layout_width="248dp"
+        android:layout_height="51dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-414dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="558dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="Already Registered?"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/idTVLoginUser"
+        android:layout_width="248dp"
+        android:layout_height="51dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-414dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="552dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="end"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="Login here"
+        android:textAlignment="viewEnd"
+        android:textAllCaps="false"
+        android:textColor="@color/purple_200"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/t3"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-262dp"
+        android:layout_marginEnd="256dp"
+        android:layout_marginBottom="500dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="EMAIL"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-262dp"
+        android:layout_marginEnd="205dp"
+        android:layout_marginBottom="285dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="PASSWORD"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="364dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="159dp"
+        android:fontFamily="@font/poppinsbold"
+        android:letterSpacing="0.10"
+        android:text="Agree to all terms and conditions."
+        android:textAllCaps="true"
+        android:textSize="10sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idTILFirstName"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="179dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idEdtFirstName"
+            android:layout_width="144dp"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/idTILLastName"
+        style="@style/LoginTextInputLayoutStyle"
+        android:layout_width="186dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="330dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:textColorHint="@color/black"
+        app:hintTextColor="@color/black">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/idEdtLastName"
+            android:layout_width="186dp"
+            android:layout_height="49dp"
+            android:background="@color/blue"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:importantForAutofill="no"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/t6"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-262dp"
+        android:layout_marginEnd="208dp"
+        android:layout_marginBottom="391dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="FIRST NAME"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/t7"
+        android:layout_width="261dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-262dp"
+        android:layout_marginEnd="-24dp"
+        android:layout_marginBottom="392dp"
+        android:fontFamily="@font/poppinsbold"
+        android:gravity="center"
+        android:letterSpacing="0.10"
+        android:padding="10dp"
+        android:text="LAST NAME"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+</RelativeLayout>
+

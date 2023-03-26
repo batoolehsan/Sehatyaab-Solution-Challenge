@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "351620671683",
+    "firebase_url": "https://sehatyaab-ae014-default-rtdb.firebaseio.com",
+    "project_id": "sehatyaab-ae014",
+    "storage_bucket": "sehatyaab-ae014.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:351620671683:android:f515153ef988cab3e35a76",
+        "android_client_info": {
+          "package_name": "com.fyp.sehatyaab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "351620671683-bcojskgfkn6q3qld59tl20sub8jql9bb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fyp.sehatyaab",
+            "certificate_hash": "a02e23378d2b3d1d468a3bbbc0ea2d18fd94bc1b"
+          }
+        },
+        {
+          "client_id": "351620671683-0vrrlko0o9i5l9taes4aur8n6hfe157a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbj0ex57t5b9XgAxNYKIrzFHJPJDiFsiI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "351620671683-0vrrlko0o9i5l9taes4aur8n6hfe157a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

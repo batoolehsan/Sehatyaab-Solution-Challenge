@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.fyp.sehatyaab">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SEHATYAAB"
+        tools:targetApi="31">
+        <activity android:name=".scan.ResultActivity"
+            android:hardwareAccelerated="true"
+            android:label="RESULT"
+            android:parentActivityName=".MainActivity"/>
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity
+            android:name=".scan.ScanActivity"
+            android:exported="false"
+            android:label="SCAN"
+            android:parentActivityName=".MainActivity"/>
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAlkv5VoJh4vlRq0khW7hxUCrZAlo2Z18c" />
+
+        <activity
+            android:name=".therapies.Therapy7"
+            android:exported="false"
+            android:label="ANKLE PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy6"
+            android:exported="false"
+            android:label="HIP PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy5"
+            android:exported="false"
+            android:label="KNEE PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy4"
+            android:exported="false"
+            android:label="HEADACHE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy3"
+            android:exported="false"
+            android:label="FOOT PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy2"
+            android:exported="false"
+            android:label="ANGER"
+            android:parentActivityName=".MainActivity" />
+
+        <receiver android:name=".AlarmReceiver" />
+
+        <service
+            android:name=".RingtonePlayingService"
+            android:enabled="true" />
+
+        <activity
+            android:name=".therapies.Therapy1"
+            android:exported="false"
+            android:label="STOMACH ACHE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ForgotPassword"
+            android:exported="false"
+            android:label=" "
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".remedies.Remedy1"
+            android:exported="false"
+            android:label="HIGH BLOOD PRESSURE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine22"
+            android:exported="false"
+            android:label="FEVER"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Alarm"
+            android:exported="false"
+            android:label="ALARM"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remediessymptoms"
+            android:exported="false"
+            android:label="HOME REMEDIES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".kidssymptoms"
+            android:exported="false"
+            android:label="MEDICINES"
+            android:parentActivityName=".Medicines" />
+        <activity
+            android:name=".adultsymptoms"
+            android:exported="false"
+            android:label="MEDICINES"
+            android:parentActivityName=".Medicines" />
+        <activity
+            android:name=".therapiessymptoms"
+            android:exported="false"
+            android:label="THERAPIES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Medicines"
+            android:exported="false"
+            android:label="MEDICINES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:label=" "
+            android:parentActivityName=".SplashScreen" />
+        <activity
+            android:name=".RegistrationActivity"
+            android:exported="false"
+            android:label=" "
+            android:parentActivityName=".LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="SEHATYAAB"
+            android:parentActivityName=".SplashScreen" />
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".medicines.Medicine21"
+            android:exported="false"
+            android:label="ASTHMA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine20"
+            android:exported="false"
+            android:label="ECZEMA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine19"
+            android:exported="false"
+            android:label="NOSE BLEEDING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine18"
+            android:exported="false"
+            android:label="STROKE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine17"
+            android:exported="false"
+            android:label="SKIN BLEEDING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine16"
+            android:exported="false"
+            android:label="WEAKNESS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine15"
+            android:exported="false"
+            android:label="FUNGI"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine14"
+            android:exported="false"
+            android:label="FOOD POISONING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine13"
+            android:exported="false"
+            android:label="MUSCLE ACHES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine12"
+            android:exported="false"
+            android:label="HIGH BLOOD PRESSURE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine11"
+            android:exported="false"
+            android:label="ITCHING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine10"
+            android:exported="false"
+            android:label="DEPRESSION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine9"
+            android:exported="false"
+            android:label="FATIGUE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine8"
+            android:exported="false"
+            android:label="VOMITING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine7"
+            android:exported="false"
+            android:label="STREP THROAT"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine6"
+            android:exported="false"
+            android:label="STOMACH ACHES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine5"
+            android:exported="false"
+            android:label="LOOSE STOOLS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine4"
+            android:exported="false"
+            android:label="FLU"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine3"
+            android:exported="false"
+            android:label="CHEST PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine2"
+            android:exported="false"
+            android:label="COUGH"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine1"
+            android:exported="false"
+            android:label="FEVER"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine42"
+            android:exported="false"
+            android:label="ASTHMA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine41"
+            android:exported="false"
+            android:label="MUSCLE ACHES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine40"
+            android:exported="false"
+            android:label="ANEMIA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine39"
+            android:exported="false"
+            android:label="JAUNDICE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine38"
+            android:exported="false"
+            android:label="CHICKENPOX"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine37"
+            android:exported="false"
+            android:label="WEAKNESS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine36"
+            android:exported="false"
+            android:label="CONJUCTIVITIS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine35"
+            android:exported="false"
+            android:label="DIARRHEA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine34"
+            android:exported="false"
+            android:label="SKIN RASH"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine33"
+            android:exported="false"
+            android:label="LOW BLOOD PRESSURE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine32"
+            android:exported="false"
+            android:label="ITCHING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine31"
+            android:exported="false"
+            android:label="NAUSEA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine30"
+            android:exported="false"
+            android:label="LOSS OF APPETITE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine29"
+            android:exported="false"
+            android:label="VOMITING"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine28"
+            android:exported="false"
+            android:label="STREP THROAT"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine27"
+            android:exported="false"
+            android:label="STOMACH ACHE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine26"
+            android:exported="false"
+            android:label="LOOSE STOOLS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine25"
+            android:exported="false"
+            android:label="FLU"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine24"
+            android:exported="false"
+            android:label="EAR INFECTION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".medicines.Medicine23"
+            android:exported="false"
+            android:label="COUGH"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy21"
+            android:exported="false"
+            android:label="RESTLESS LEG SYNDROME"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy20"
+            android:exported="false"
+            android:label="HAIRFALL"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy19"
+            android:exported="false"
+            android:label="DANDRUFF"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy18"
+            android:exported="false"
+            android:label="LOW BLOOD SUGAR LEVEL"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy17"
+            android:exported="false"
+            android:label="STRESS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy16"
+            android:exported="false"
+            android:label="YEAST INFECTION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy15"
+            android:exported="false"
+            android:label="NAUSEA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy14"
+            android:exported="false"
+            android:label="EAR INFECTION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy13"
+            android:exported="false"
+            android:label="DARK CIRCLES"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy12"
+            android:exported="false"
+            android:label="ANEMIA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy11"
+            android:exported="false"
+            android:label="BLACK HEADS"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy10"
+            android:exported="false"
+            android:label="CONSTIPATION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy9"
+            android:exported="false"
+            android:label="SORE THROAT"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy8"
+            android:exported="false"
+            android:label="COUGH"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy7"
+            android:exported="false"
+            android:label="ACNE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy6"
+            android:exported="false"
+            android:label="HEADACHE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy5"
+            android:exported="false"
+            android:label="KNEE PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy4"
+            android:exported="false"
+            android:label="DIARRHEA"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy3"
+            android:exported="false"
+            android:label="ACIDITY"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".remedies.Remedy2"
+            android:exported="false"
+            android:label="MOUTH ULCER"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy21"
+            android:exported="false"
+            android:label="UPPER BACK PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy20"
+            android:exported="false"
+            android:label="NECK PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy19"
+            android:exported="false"
+            android:label="SCIATIA NERVE PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy18"
+            android:exported="false"
+            android:label="LOWER BACK PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy17"
+            android:exported="false"
+            android:label="LOSE BELLY FAT"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy16"
+            android:exported="false"
+            android:label="CHRONIC FATIGUE SYNDROME"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy15"
+            android:exported="false"
+            android:label="FACE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy14"
+            android:exported="false"
+            android:label="HIGH BLOOD PRESSURE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy13"
+            android:exported="false"
+            android:label="PERIOD PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy12"
+            android:exported="false"
+            android:label="SHOULDER PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy11"
+            android:exported="false"
+            android:label="EYE FATIGUE"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy10"
+            android:exported="false"
+            android:label="ELBOW PAIN"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy9"
+            android:exported="false"
+            android:label="DEPRESSION"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".therapies.Therapy8"
+            android:exported="false"
+            android:label="CHEST PAIN"
+            android:parentActivityName=".MainActivity" />
+    </application>
+
+</manifest>
