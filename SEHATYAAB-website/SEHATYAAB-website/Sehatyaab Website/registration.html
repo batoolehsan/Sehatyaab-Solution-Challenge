@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>SIGNUP - SEHATYAB</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Style CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <div class="logo">
+       
+      <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="index.html">HOME</a></li>
+          <li><a class="nav-link scrollto" href="learn.html">ABOUT</a></li>
+          <li class="dropdown"><a href="#"><span>SERVICES</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="medicines.html">MEDICINES</a></li>
+              <li><a href="home remedies.html">HOME REMEDIES</a></li>
+              <li><a href="therapies.html">THERAPIES</a></li>
+            </ul>
+          </li>
+                             <li id="account"><a class="nav-link scrollto" href="login.html">ACCOUNT</a></li>
+          <li id="logoutli"><a class="nav-link" onclick="logout()" style="cursor: pointer;">LOGOUT</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="assets/js/login.js"></script>
+
+
+
+ <!-- ======= Create New Account Page ======= -->
+<div class="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-right">
+           <br>
+          <img src="assets/img/registration.png" alt="Image" class="img-fluid">
+        </div>
+        <div class="col-md-6 contents" data-aos="fade-left">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <div class="mb-4 text-center">
+ <br>
+              <h2 style="font-weight:bolder;margin-top: 70px;">Create New Account</h2>
+              <p class="mb-4" style="font-weight: bold;font-size: 15px;">Already Registered? <span><a href="login.html" style="color:#20BDF1;">Login here.</a></span></p>
+            </div>
+            <br>
+            
+                <label style="font-size: 13px;">ENTER YOUR EMAIL</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+
+              <br>
+  <div class="row">
+  
+              <div class="col-lg-6">
+                <label for="username" style="font-size: 13px;">FIRST NAME</label>
+                <input type="text" id="first_name" pattern="[A-Za-z].{1,}" name="firstname" class="form-control" required>
+            </div>
+            <div class="col-lg-6">
+                <label for="username" style="font-size: 13px;">LAST NAME</label>
+                <input type="text" id="last_name" pattern="[A-Za-z].{1,}" name="lastname" class="form-control" required>
+            </div>
+
+          </div>
+              <br>
+                <label style="font-size: 13px;">PASSWORD</label>
+                <input type="password" id="password" minlength="8" name="password" class="form-control" required>
+<br>
+              <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+              <label class="label-checkbox100" for="ckb1" style="font-size: 13px;">
+                AGREE TO ALL TERMS & CONDITIONS.
+              </label>
+              <br><br>
+              <input type="submit" id='signup' name="signup" value="SIGNUP" class="btn btn-block btn-info button1" />
+            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><!---End Registration Page-->
+
+<br><br>
+
+<!-- End Create New Account Page -->
+
+
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+  import { getDatabase, set, ref, update  } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword,signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAS2cyezqEYULg5so5GrJnfoA2KeKNIdEY",
+    authDomain: "sehatyaab-ae014.firebaseapp.com",
+    databaseURL: "https://sehatyaab-ae014-default-rtdb.firebaseio.com",
+    projectId: "sehatyaab-ae014",
+    storageBucket: "sehatyaab-ae014.appspot.com",
+    messagingSenderId: "351620671683",
+    appId: "1:351620671683:web:cf1d5c94c4915710e35a76"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+// Set up our register function
+signup.addEventListener('click',(e)=>{
+  // Get all our input fields
+  var email = document.getElementById('email').value
+  var password = document.getElementById('password').value
+  var first_name = document.getElementById('first_name').value
+  var last_name = document.getElementById('last_name').value
+
+
+  // Move on with Auth
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Declare user variable
+ 
+// Signed in 
+      const user = userCredential.user;
+      set(ref(database, 'new users/' + user.uid),{
+      email : email,
+      first_name : first_name,
+      last_name : last_name,
+      last_login : Date.now()
+      })
+    
+    // DOne
+    //alert('User Created!!')
+   window.location = "index.html";
+
+  })
+  .catch(function(error) {
+    // Firebase will use this to alert of its errors
+    var error_code = error.code
+    var error_message = error.message
+
+    alert(error_message)
+
+    var letters = /^[A-Za-z]+$/;
+    if(document.getElementById('first_name').value.match(letters) && document.getElementById('last_name').value.match(letters))
+      {
+      return true;
+      }
+      else
+      {
+      alert('Please enter only alphabets to name fields');
+      return false;
+      }
+
+      
+  })    
+})
+
+</script>
+
+   <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <a href="#hero">
+            <h3 style="font-weight: bold;color: #20BDF1;">SEHATYAAB</h3></a>
+            <p>
+              Jinnah University For Women<br>
+              5-C Nazimabad, <br>
+              Karachi, 74600 <br>
+              Pakistan.<br><br>
+              <strong style="color: #20BDF1;">Phone:</strong> +92 (021) 366 206 14-247<br>
+              <strong style="color: #20BDF1;">Email:</strong> csse@juw.edu.pk<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Menu</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right scrollto"></i> <a href="index.html">Home</a></li>
+              <li><i class="bx bx-chevron-right scrollto"></i> <a href="learn.html">About us</a></li>
+              <li><i class="bx bx-chevron-right scrollto"></i> <a href="login.html">Account</a></li>
+              <li><i class="bx bx-chevron-right scrollto"></i> <a href="term.html">Terms & Conditions</a></li>
+              <li><i class="bx bx-chevron-right scrollto"></i> <a href="privacy.html">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="medicines.html">Medicines</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home remedies.html">Home Remedies</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="therapies.html">Therapies</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Connect With Us</h4>
+            <div class="social-links text-left text-lg-right pt-3 pt-lg-0">
+        <a href="https://www.facebook.com/profile.php?id=100088676834738&mibextid=ZbWKwL" class="facebook"><i class="bx bxl-facebook"></i></a>
+      </div>
+            
+            <form action="https://www.google.com/search" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+</form>
+            <br>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

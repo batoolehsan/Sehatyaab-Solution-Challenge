@@ -1,0 +1,2342 @@
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  font-family: "Poppins";
+  color: #313030;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  height: 70px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: #fff;
+}
+
+#header.header-fixed {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+#header .logo h1 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 0;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+}
+
+#header .logo h1 a,
+#header .logo h1 a:hover {
+  color: #635551;
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+.scrolled-offset {
+  margin-top: 50px;
+}
+
+#main {
+  z-index: 3;
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.navbar {
+  padding: 0;
+}
+
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a,
+.navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0 10px 30px;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  color: #20BDF1;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.navbar a i,
+.navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.navbar a:hover,
+.navbar .active,
+.navbar .active:focus,
+.navbar li:hover>a {
+  color: #1877F2;
+}
+
+.navbar .getstarted,
+.navbar .getstarted:focus {
+  background:#20BDF1;
+  padding: 8px 20px;
+  margin-left: 30px;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.navbar .getstarted:hover,
+.navbar .getstarted:focus:hover {
+  color: #fff;
+  background: #ff6b3b;
+}
+
+.navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 14px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar .dropdown ul a:hover,
+.navbar .dropdown ul .active:hover,
+.navbar .dropdown ul li:hover>a {
+  color: #1877F2;
+}
+
+.navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #20bdf1;
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+}
+
+.mobile-nav-toggle.bi-x {
+  color:#20bdf1;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .navbar ul {
+    display: none;
+  }
+}
+
+.navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: white;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.navbar-mobile a,
+.navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #20BDF1;
+}
+
+.navbar-mobile a:hover,
+.navbar-mobile .active,
+.navbar-mobile li:hover>a {
+  color: #0d6efd;
+}
+
+.navbar-mobile .getstarted,
+.navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+}
+
+.navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.navbar-mobile .dropdown ul a:hover,
+.navbar-mobile .dropdown ul .active:hover,
+.navbar-mobile .dropdown ul li:hover>a {
+  color: #0d6efd;
+}
+
+.navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 60vh;
+  background: url("../img/slide.jpg") center center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin-bottom: -120px;
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  z-index: 2;
+}
+
+#hero h1 {
+  margin: 0 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #fff;
+}
+
+#hero p {
+  color: #eee;
+  margin-bottom: 50px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+#hero .get-started-icon {
+  font-size: 24px;
+  background: #20BDF1;
+  padding: 14px;
+  color: #fff;
+  border-radius: 50px;
+  position: relative;
+  z-index: 5;
+  box-shadow: 10px 2px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+  font-size: 16px;
+  letter-spacing: 2px;
+  display: inline-block;
+  transition: 0.5s;
+  margin-left: -10px;
+  padding: 8px 26px 8px 26px;
+  color: #20BDF1;
+  background: white;
+  border-radius: 0 50px 50px 0;
+  position: relative;
+  z-index: 4;
+}
+#hero .btn-get-started:hover{
+  color:white ;
+  background: #20BDF1;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+@media (max-width: 1024px),
+(max-height: 768px) {
+  #hero {
+    margin-bottom: -150px;
+    height: 80vh;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero {
+    height: 80vh;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-height: 640px) {
+  #hero {
+    height: 120vh;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f5fdff;
+}
+
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  font-weight:bold;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  padding-bottom: 0;
+  font-family: "Poppins", sans-serif;
+  color: #635551;
+}
+
+
+
+
+/*--------------------------------------------------------------
+# Why Us
+--------------------------------------------------------------*/
+.why-us {
+  padding: 0 0 30px 0;
+  position: relative;
+  z-index: 3;
+}
+
+.why-us .content {
+  padding: 30px;
+  background: #20BDF1;
+  border-radius: 4px;
+  color: #fff;
+}
+
+.why-us .content h3 {
+  font-weight: 700;
+  font-size: 34px;
+  margin-bottom: 30px;
+}
+
+.why-us .content p {
+  margin-bottom: 30px;
+
+  text-align: justify;
+}
+
+.why-us .content .more-btn {
+  display: inline-block;
+  background: white;
+  padding: 6px 30px 8px 30px;
+  color: #20BDF1;
+  border-radius: 50px;
+  transition: all ease-in-out 0.4s;
+    font-weight: 600;
+}
+
+.why-us .content .more-btn i {
+  font-size: 14px;
+
+}
+
+.why-us .content .more-btn:hover {
+  color: #20BDF1;
+  background: #fff;
+}
+
+.why-us .icon-boxes .icon-box {
+  text-align: center;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  padding: 40px 30px;
+  width: 100%;
+}
+
+.why-us .icon-boxes .icon-box i {
+  font-size: 40px;
+  color: #20BDF1;
+  margin-bottom: 30px;
+}
+
+.why-us .icon-boxes .icon-box h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+}
+
+.why-us .icon-boxes .icon-box p {
+  font-size: 15px;
+  color: #716f6f;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about .icon-boxes h4 {
+  font-size: 18px;
+  color: #20BDF1;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.about .icon-box {
+  margin-top: 40px;
+}
+
+.about .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #20BDF1;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.about .icon-box .icon i {
+  color: #20BDF1;
+  font-size: 32px;
+}
+
+.about .icon-box:hover .icon {
+  background:  #20BDF1;
+  border-color:  #20BDF1;
+}
+
+.about .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.about .icon-box .title {
+  margin-left: 85px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.about .icon-box .title a {
+  color: #20BDF1;
+  transition: 0.3s;
+}
+
+
+.about .icon-box .description {
+  margin-left: 85px;
+  line-height: 24px;
+  font-size: 14px;
+
+  text-align: justify;
+
+}
+
+.about .img-box {
+  background: url("../img/about.png") center center no-repeat;
+  background-size: cover;
+  min-height: 500px;
+}
+
+
+/*--------------------------------------------------------------
+# Services
+--------------------------------------------------------------*/
+.services .icon-box {
+  padding: 50px 20px;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  text-align: center;
+  height: 200px;
+  position: relative;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.services .icon {
+  position: absolute;
+  top: -36px;
+  left: calc(50% - 36px);
+  transition: 0.2s;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 72px;
+  height: 72px;
+  background: #20BDF1;
+}
+
+.services .icon i {
+  color: #fff;
+  font-size: 24px;
+  line-height: 0;
+}
+
+.services .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #343a40;
+}
+
+.services .title a {
+  color: #343a40;
+}
+
+.services .icon-box:hover .icon {
+  background: #fff;
+  border: 2px solid #20BDF1;
+}
+
+.services .icon-box:hover .icon i {
+  color: #20BDF1;
+}
+
+
+
+.services .description {
+  line-height: 24px;
+  font-size: 14px;
+   color: #343a40;
+}
+
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team .member {
+  margin-bottom: 20px;
+  overflow: hidden;
+  text-align: center;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.team .member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team .member .social {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .member .social a {
+  transition: color 0.3s;
+  color: #473d3a;
+  margin: 0 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team .member .social a:hover {
+  color: #0d6efd;
+}
+
+.team .member .social i {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.team .member .member-info {
+  padding: 20px 15px;
+}
+
+.team .member .member-info h4 {
+  font-weight: 700;
+  margin-bottom: 5px;
+  font-size: 18px;
+  color: #473d3a;
+}
+
+.team .member .member-info span {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #989595;
+}
+
+.team .member .member-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #656262;
+}
+
+.team .member:hover .social {
+  opacity: 1;
+}
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info-box {
+  color: #313030;
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 20px;
+}
+
+.contact .info-box i {
+  font-size: 32px;
+  color: #20BDF1;
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px dotted #ffded4;
+  float: left;
+}
+
+.contact .info-box h3 {
+  font-size: 20px;
+  color: #656262;
+  font-weight: 700;
+  margin: 10px 0 10px 68px;
+}
+
+.contact .info-box p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin: 0 0 0 68px;
+}
+
+.contact .php-email-form {
+  box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+  padding: 30px;
+}
+
+.contact .php-email-form .error-message {
+  display: none;
+  color: #fff;
+  background:#20BDF1;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .error-message br+br {
+  margin-top: 25px;
+}
+
+.contact .php-email-form .sent-message {
+  display: none;
+  color: #fff;
+  background:#20BDF1;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.contact .php-email-form .loading {
+  display: none;
+  background: #fff;
+  text-align: center;
+  padding: 15px;
+}
+
+.contact .php-email-form .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #20BDF1;
+  border-top-color: #eee;
+  -webkit-animation: animate-loading 1s linear infinite;
+  animation: animate-loading 1s linear infinite;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: #20BDF1;
+}
+
+.contact .php-email-form input {
+  padding: 10px 15px;
+}
+
+.contact .php-email-form textarea {
+  padding: 12px 15px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: #20BDF1;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+
+@-webkit-keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate-loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: #313030;
+  font-size: 14px;
+  background: #fff;
+}
+
+#footer .footer-top {
+  padding: 60px 0 30px 0;
+  background: #f5fdff;
+}
+
+#footer .footer-top .footer-contact {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-contact h4 {
+  font-size: 22px;
+  margin: 0 0 30px 0;
+  padding: 2px 0 2px 0;
+  line-height: 1;
+  font-weight: 700;
+}
+
+#footer .footer-top .footer-contact p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 0;
+  font-family: "Raleway", sans-serif;
+  color: #656262;
+}
+
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #20BDF1;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-links {
+  margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+  padding-right: 2px;
+  color: #20BDF1;
+  font-size: 18px;
+  line-height: 1;
+}
+
+#footer .footer-top .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul a {
+  color: #656262;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 1;
+  font-weight: 600;
+}
+
+#footer .footer-top .footer-links ul a:hover {
+  text-decoration: none;
+  color: #20BDF1;
+}
+
+#footer .footer-newsletter {
+  font-size: 15px;
+}
+
+#footer .footer-newsletter h4 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #20BDF1;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+#footer .footer-newsletter form {
+  margin-top: 30px;
+  background: #fff;
+  padding: 6px 10px;
+  position: relative;
+  border-radius: 50px;
+  text-align: left;
+  border: 1px solid #20BDF1;
+}
+
+#footer .footer-newsletter form input[type=text] {
+  border: 0;
+  padding: 4px 8px;
+  width: calc(100% - 100px);
+}
+
+
+#footer .footer-newsletter form input[type=submit] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  background: none;
+  font-size: 16px;
+  padding: 0 20px;
+  background: #20BDF1;
+  color: #fff;
+  transition: 0.3s;
+  border-radius: 50px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+#footer .footer-newsletter form input[type=submit]:hover {
+  background: #1877F2;
+}
+
+#footer .credits {
+  padding-top: 5px;
+  font-size: 13px;
+  color: #313030;
+}
+
+#footer .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #20BDF1;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+#footer .social-links a:hover {
+  background: #1877F2;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------------------
+# Pharmacy Location
+--------------------------------------------------------------*/
+
+iframe{
+  width: 100%;
+  height: 900px;
+}
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+/*--------------------------------------------------------------
+# Login Page
+--------------------------------------------------------------*/
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e0faff;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.button1 {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight:bold;
+    line-height: 1.5;
+    color: white;
+    background-color: #20BDF1;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.button1:hover{
+  color: white;
+  background-color: #20BDF1;
+}
+label {
+    display: inline-block;
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.para{
+  font-size: 14px;
+}
+.forgot-pass{
+  color: black;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.forgot-pass:hover{
+  color: black;
+  }
+.signup-pass{
+  color:#20BDF1;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+.signup-pass:hover{
+  color: #20BDF1;
+  }
+
+
+
+
+  button {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight:bold;
+    line-height: 1.5;
+    color: white;
+    background-color: #20BDF1;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+
+/*--------------------------------------------------------------
+# MEDICINES Description page
+--------------------------------------------------------------*/
+.about1{
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+.about1 .icon-boxes h4 {
+  font-size: 18px;
+  color: #20BDF1;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.about1 .icon-box {
+  margin-top: 40px;
+}
+
+.about1 .icon-box .icon {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 2px solid #20BDF1;
+  border-radius: 50px;
+  transition: 0.5s;
+  background: #fff;
+}
+
+.about1 .icon-box .icon i {
+  color: #20BDF1;
+  font-size: 32px;
+}
+
+.about1 .icon-box:hover .icon {
+  background:  #20BDF1;
+  border-color:  #20BDF1;
+}
+
+.about1 .icon-box:hover .icon i {
+  color: #fff;
+}
+
+.about1 .icon-box .title {
+  margin-left: 85px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.about1 .icon-box .title a {
+  color: #20BDF1;
+  transition: 0.3s;
+}
+
+
+
+.about1 .icon-box .description {
+  margin-left: 85px;
+  line-height: 24px;
+  font-size: 14px;
+
+  text-align: justify;
+
+}
+/*--------------------------------------------------------------
+# Medicine images
+--------------------------------------------------------------*/
+
+#about1 .img-box {
+  background: url("../img/medicines/paracetamol.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+
+#about2 .img-box {
+  background: url("../img/medicines/Acefyl-Cough-Syrup.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+
+#about3 .img-box {
+  background: url("../img/medicines/Nitroglycerin-Glyceryl.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about4 .img-box {
+  background: url("../img/medicines/actified.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about5 .img-box {
+  background: url("../img/medicines/imodium.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about6 .img-box {
+  background: url("../img/medicines/risek.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+
+#about7 .img-box {
+  background: url("../img/medicines/amoxil.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about8 .img-box {
+  background: url("../img/medicines/gravinate.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about9 .img-box {
+  background: url("../img/medicines/vivarin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about10 .img-box {
+  background: url("../img/medicines/Cipralex.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about11 .img-box {
+  background: url("../img/medicines/Hydrocortisone.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about12 .img-box {
+  background: url("../img/medicines/norvasc.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about13 .img-box {
+  background: url("../img/medicines/brufen.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about14 .img-box {
+  background: url("../img/medicines/bismuth subsalicylate.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about15 .img-box {
+  background: url("../img/medicines/hydrozole.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about16 .img-box {
+  background: url("../img/medicines/surbex z.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about17 .img-box {
+  background: url("../img/medicines/daktacort.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about18 .img-box {
+  background: url("../img/medicines/rolip.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about19 .img-box {
+  background: url("../img/medicines/avamys.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about20 .img-box {
+  background: url("../img/medicines/bepanthene.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about21 .img-box {
+  background: url("../img/medicines/myteka.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about22 .img-box {
+  background: url("../img/medicines/panadol.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about23 .img-box {
+  background: url("../img/medicines/arinac.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about24 .img-box {
+  background: url("../img/medicines/benadryl.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about25 .img-box {
+  background: url("../img/medicines/hydryllin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about26 .img-box {
+  background: url("../img/medicines/cardnit.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about27 .img-box {
+  background: url("../img/medicines/angised.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about28 .img-box {
+  background: url("../img/medicines/rondecc.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about29 .img-box {
+  background: url("../img/medicines/flagyl.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about30 .img-box {
+  background: url("../img/medicines/entox-p.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about31 .img-box {
+  background: url("../img/medicines/lomotil.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about32 .img-box {
+  background: url("../img/medicines/ruling.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about33 .img-box {
+  background: url("../img/medicines/omega.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about34 .img-box {
+  background: url("../img/medicines/nexium.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about35 .img-box {
+  background: url("../img/medicines/erythrocin.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about36 .img-box {
+  background: url("../img/medicines/strepsils.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about37 .img-box {
+  background: url("../img/medicines/motilium.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about38 .img-box {
+  background: url("../img/medicines/domel.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about39 .img-box {
+  background: url("../img/medicines/modafinil.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about40 .img-box {
+  background: url("../img/medicines/amantadine.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about41 .img-box {
+  background: url("../img/medicines/zavget.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about42 .img-box {
+  background: url("../img/medicines/avil.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about43 .img-box {
+  background: url("../img/medicines/rigix.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about44 .img-box {
+  background: url("../img/medicines/tenormin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about45 .img-box {
+  background: url("../img/medicines/aldomet.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about46 .img-box {
+  background: url("../img/medicines/avsar.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about47 .img-box {
+  background: url("../img/medicines/voltral.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about48 .img-box {
+  background: url("../img/medicines/wintogeno.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about49 .img-box {
+  background: url("../img/medicines/iodex.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about50 .img-box {
+  background: url("../img/medicines/trioral.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about51 .img-box {
+  background: url("../img/medicines/betaderm.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about52 .img-box {
+  background: url("../img/medicines/dermosporin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about53 .img-box {
+  background: url("../img/medicines/sangobion.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about54 .img-box {
+  background: url("../img/medicines/methycobal.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about55 .img-box {
+  background: url("../img/medicines/qalsan.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about56 .img-box {
+  background: url("../img/medicines/caltrate.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about57 .img-box {
+  background: url("../img/medicines/calcite.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about58 .img-box {
+  background: url("../img/medicines/betagenic.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about59 .img-box {
+  background: url("../img/medicines/healit.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about60 .img-box {
+  background: url("../img/medicines/lowplat.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about61 .img-box {
+  background: url("../img/medicines/plavix.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about62 .img-box {
+  background: url("../img/medicines/transamin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about63 .img-box {
+  background: url("../img/medicines/sinex.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about64 .img-box {
+  background: url("../img/medicines/fusil.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about65 .img-box {
+  background: url("../img/medicines/montiget.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about66 .img-box {
+  background: url("../img/medicines/quibron.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about67 .img-box {
+  background: url("../img/medicines/seretide.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about68 .img-box {
+  background: url("../img/medicines/panadol-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about69 .img-box {
+  background: url("../img/medicines/calpol.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about70 .img-box {
+  background: url("../img/medicines/arinac-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about71 .img-box {
+  background: url("../img/medicines/sancos.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about72 .img-box {
+  background: url("../img/medicines/brufen-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about73 .img-box {
+  background: url("../img/medicines/otosporin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about74 .img-box {
+  background: url("../img/medicines/betnesol.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about75 .img-box {
+  background: url("../img/medicines/cipotic.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about76 .img-box {
+  background: url("../img/medicines/disprol.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about77 .img-box {
+  background: url("../img/medicines/q-plex.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about78 .img-box {
+  background: url("../img/medicines/flagyl-2.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about79 .img-box {
+  background: url("../img/medicines/imodium-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about80 .img-box {
+  background: url("../img/medicines/cyclopam.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about81 .img-box {
+  background: url("../img/medicines/pedialyte.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about82 .img-box {
+  background: url("../img/medicines/amoxil-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about83 .img-box {
+  background: url("../img/medicines/olcuf.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about84 .img-box {
+  background: url("../img/medicines/coferb.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about85 .img-box {
+  background: url("../img/medicines/gravinate-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about86 .img-box {
+  background: url("../img/medicines/trimetabol.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about87 .img-box {
+  background: url("../img/medicines/aptimax.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about88 .img-box {
+  background: url("../img/medicines/epitize.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about89 .img-box {
+  background: url("../img/medicines/domel-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about90 .img-box {
+  background: url("../img/medicines/lamisil.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about91 .img-box {
+  background: url("../img/medicines/peditral.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about92 .img-box {
+  background: url("../img/medicines/rashnil.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about93 .img-box {
+  background: url("../img/medicines/sudocrem.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about94 .img-box {
+  background: url("../img/medicines/hidrasec.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about95 .img-box {
+  background: url("../img/medicines/eyepat.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about96 .img-box {
+  background: url("../img/medicines/histazolin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about98 .img-box {
+  background: url("../img/medicines/cac.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about99 .img-box {
+  background: url("../img/medicines/sangobion-2.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about100 .img-box {
+  background: url("../img/medicines/clenil.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about101 .img-box {
+  background: url("../img/medicines/ventolin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about102 .img-box {
+  background: url("../img/medicines/atem.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about103 .img-box {
+  background: url("../img/medicines/contractubex.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about104 .img-box {
+  background: url("../img/medicines/herpezostin.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about105 .img-box {
+  background: url("../img/medicines/polyfax.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about106 .img-box {
+  background: url("../img/medicines/maltofer.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about107 .img-box {
+  background: url("../img/medicines/fero.png") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about108 .img-box {
+  background: url("../img/medicines/hepamerz.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about109 .img-box {
+  background: url("../img/medicines/hepasan.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+#about110 .img-box {
+  background: url("../img/medicines/icterene.jpg") center center no-repeat;
+  background-size: cover;
+  height: 500px;
+  min-height: 500px;
+}
+/*--------------------------------------------------------------
+# Home Remedies Description page
+--------------------------------------------------------------*/
+.about .icon-box .icon1 {
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  transition: 0.5s;
+  background: #20BDF1;
+}
+
+.about .icon-box .icon1 i {
+  color: white;
+  font-size: 32px;
+}
+/*--------------------------------------------------------------
+# SYMPTOM page
+--------------------------------------------------------------*/
+.label-checkbox100:hover{
+color: #20BDF1;
+}
+
+/*--------------------------------------------------------------
+# contact form
+--------------------------------------------------------------*/
+.alert{
+  width: 100%;
+  background: #20BDF1;
+  padding: 10px  20px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 900;
+  display: none;
+}
+.name {
+    display: block;
+    width: 100%;
+    padding: 20px 20px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e0faff;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+   
+}
+
+.email {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e0faff;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.message {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #e0faff;
+    background-clip: padding-box;
+    border: 1px solid #e0faff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    margin-bottom: 20px;
+}
+/*--------------------------------------------------------------
+#Home remedies images
+--------------------------------------------------------------*/
+#img1{
+  background: url("../img/home remedies/1.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img2{
+  background: url("../img/home remedies/2.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img3{
+  background: url("../img/home remedies/3.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img4{
+  background: url("../img/home remedies/4.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img5{
+  background: url("../img/home remedies/5.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img6{
+  background: url("../img/home remedies/7.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img7{
+  background: url("../img/home remedies/8.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img8{
+  background: url("../img/home remedies/9.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img9{
+  background: url("../img/home remedies/10.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img10{
+  background: url("../img/home remedies/11.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img11{
+  background: url("../img/home remedies/12.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img12{
+  background: url("../img/home remedies/13.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img13{
+  background: url("../img/home remedies/14.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img14{
+  background: url("../img/home remedies/15.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img15{
+  background: url("../img/home remedies/16.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img16{
+  background: url("../img/home remedies/17.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img17{
+  background: url("../img/home remedies/18.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img18{
+  background: url("../img/home remedies/62.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img19{
+  background: url("../img/home remedies/19.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img20{
+  background: url("../img/home remedies/20.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img21{
+  background: url("../img/home remedies/23.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img22{
+  background: url("../img/home remedies/21.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img23{
+  background: url("../img/home remedies/63.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img24{
+  background: url("../img/home remedies/22.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img25{
+  background: url("../img/home remedies/24.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img26{
+  background: url("../img/home remedies/25.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img27{
+  background: url("../img/home remedies/8.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img28{
+  background: url("../img/home remedies/26.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img29{
+  background: url("../img/home remedies/27.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img30{
+  background: url("../img/home remedies/28.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img31{
+  background: url("../img/home remedies/29.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img32{
+  background: url("../img/home remedies/32.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img33{
+  background: url("../img/home remedies/33.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img34{
+  background: url("../img/home remedies/34.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img35{
+  background: url("../img/home remedies/36.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img36{
+  background: url("../img/home remedies/37.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img37{
+  background: url("../img/home remedies/38.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img38{
+  background: url("../img/home remedies/39.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img39{
+  background: url("../img/home remedies/40.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img40{
+  background: url("../img/home remedies/41.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img41{
+  background: url("../img/home remedies/6.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img42{
+  background: url("../img/home remedies/42.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img43{
+  background: url("../img/home remedies/43.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img44{
+  background: url("../img/home remedies/44.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img45{
+  background: url("../img/home remedies/30.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img46{
+  background: url("../img/home remedies/49.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img47{
+  background: url("../img/home remedies/46.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img48{
+  background: url("../img/home remedies/64.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img49{
+  background: url("../img/home remedies/65.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img50{
+  background: url("../img/home remedies/47.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img51{
+  background: url("../img/home remedies/66.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img52{
+  background: url("../img/home remedies/48.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img53{
+  background: url("../img/home remedies/50.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img54{
+  background: url("../img/home remedies/51.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img55{
+  background: url("../img/home remedies/52.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img56{
+  background: url("../img/home remedies/53.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img57{
+  background: url("../img/home remedies/54.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img58{
+  background: url("../img/home remedies/56.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img59{
+  background: url("../img/home remedies/55.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img60{
+  background: url("../img/home remedies/35.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img61{
+  background: url("../img/home remedies/57.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img62{
+  background: url("../img/home remedies/31.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img63{
+  background: url("../img/home remedies/59.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img64{
+  background: url("../img/home remedies/60.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
+#img65{
+  background: url("../img/home remedies/61.png") center center no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  width: 700px;
+}
